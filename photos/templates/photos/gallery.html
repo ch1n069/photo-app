@@ -1,2 +1,78 @@
-{% extends 'base.html' %}{% block content %}
-<button class="btn btn-success">hi</button> {% endblock content %}
+{% extends 'base.html' %}{% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'gallery.css' %}">
+<section id="uno">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Chino - ga</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="hero" class="text-center ">
+        <h2 class="para-1">- Gallery -</h2>
+        <p class="para"> Memories Worth Sharing </p>
+    </div>
+
+
+</section>
+
+
+<div class="container mt-4">
+    <p class="explore text-center">EXPLORE MY WORK</p>
+    <h3 class="text-center">Selected Galaries</h3>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna">
+                <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+                    <h4 class="card-title">Bologna</h4>
+                    <h6 class="card-subtitle mb-2">Emilia-Romagna Region, Italy</h6>
+                    <p class="card-text">It is the seventh most populous city in Italy, at the heart of a metropolitan area of about one million people. </p>
+                    <div class="link d-flex">
+                        <a href="#" class="card-link text-warning">Read More</a>
+                        <a href="#" class="card-link text-warning">Book a Trip</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+{% endblock content %}
