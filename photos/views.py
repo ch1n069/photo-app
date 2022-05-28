@@ -9,10 +9,14 @@ from photos.models import Photo, Category , Location
 
 def gallery(request):
     categories = Category.objects.all()
-    ctx = {'categories':categories}
+    photos = Photo.objects.all()
+    ctx = {'categories':categories, 'photos':photos}
     return render(request, 'photos/gallery.html',ctx)
 
 
 
 def ViewPhoto(request, pk):
-    return render(request, 'photos/photo.html')
+    photo = Photo.objects.get(id=pk)
+    ctx = {'photo':photo,}
+
+    return render(request, 'photos/photo.html', ctx)

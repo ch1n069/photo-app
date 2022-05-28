@@ -6,9 +6,10 @@
     <div class="row justify-content-center">
         <div class="col">
             <a href="{% url 'gallery' %}" class="btn btn-dark my-3" href="">Go back</a>
-            <div style="height:80vh ;">
-                <img style="max-width:80%; max-height: 100%;" src="" alt="">
-                <p></p>
+            <div style="height:90vh">
+                <img style="max-width:100%; max-height:100%" src="{{photo.image.url}}" alt="">
+                <p>{{photo.description}}</p>
+
 
             </div>
         </div>
