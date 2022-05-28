@@ -13,7 +13,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Technology</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,21 +52,27 @@
 <div class="container mt-4">
     <p class="explore text-center">EXPLORE MY WORK</p>
     <h3 class="text-center">Selected Galaries</h3>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna">
+
+    <div class="row p-1">
+        <div class="col-md-4 m-1 mb-5">
+            <div class="card my-2">
+                <img class="card-img img-fluid" src="https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Bologna">
                 <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
-                    <h4 class="card-title">Bologna</h4>
-                    <h6 class="card-subtitle mb-2">Emilia-Romagna Region, Italy</h6>
-                    <p class="card-text">It is the seventh most populous city in Italy, at the heart of a metropolitan area of about one million people. </p>
-                    <div class="link d-flex">
+                    <div class="card-body text-center">
+                        <h3>Peru para</h3>
+
                         <a href="#" class="card-link text-warning">Read More</a>
-                        <a href="#" class="card-link text-warning">Book a Trip</a>
+
+
+
+
                     </div>
+                    <a href="{% url 'photo' 5%}" class="btn btn-outline-dark  btn-sm">view Photo</a>
+
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 

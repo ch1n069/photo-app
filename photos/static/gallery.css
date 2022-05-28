@@ -8,6 +8,18 @@ body {
     color: white;
 }
 
+.card-img-overlay {
+    background-color: rgba(#000, 0.7);
+}
+
+.card {
+    width: 400px;
+}
+
+.card-body {
+    padding-top: 40%;
+}
+
 .explore {
     color: #414141;
 }
