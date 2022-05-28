@@ -29,3 +29,9 @@ class  Photo(models.Model):
     image = models.ImageField(null=False, blank=False)
     description = models.CharField(max_length=200, null=False)
 
+
+
+
+    def __str__(self):
+        return self.name, self.description
+
