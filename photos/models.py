@@ -23,8 +23,8 @@ class Category(models.Model):
         return self.name
 
 class  Photo(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=False)
-    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=False)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=100, null=False)
     image = models.ImageField(null=False, blank=False)
     description = models.CharField(max_length=200, null=False)
