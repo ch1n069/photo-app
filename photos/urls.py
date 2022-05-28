@@ -1,11 +1,11 @@
 from django.urls import path 
-from photos import views
+from . import views
 
 
 
 urlpatterns = [
-    path("", views.gallery, name="gallery"),
-    path("photo/<str:pk>/", views.ViewPhoto, name="photo")
+    path('', views.gallery, name='gallery'),
+    path('photo/<str:pk>/', views.ViewPhoto, name='photo'),
 
 
 ]
