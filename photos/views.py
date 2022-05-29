@@ -24,4 +24,7 @@ def ViewPhoto(request, pk):
 
 
 def addPhoto(request):
-    return render (request , 'photos/add.html')
+    categories = Category.objects.all()
+    ctx = {'categories':categories}
+
+    return render (request , 'photos/add.html', ctx)
