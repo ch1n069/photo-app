@@ -60,3 +60,29 @@ def addPhoto(request):
     ctx = {'categories':categories}
 
     return render (request , 'photos/add.html', ctx)
+
+
+
+def search_results(request):
+
+
+    if request.method == 'POST':
+        searched = request.POST['searched' ]
+        categories = Photo.objects.filter(category__name__contains=searched)
+        message = searched
+
+        ctx = {'searched':searched, 'categories':categories, 'message':message}
+
+        return render(request, 'photos/search.html',ctx)
+    else:
+
+        return render(request, 'photos/search.html')
+
+
+
+
+
+
+    
+        
+     
