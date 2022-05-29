@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% block content %}
+<div class="container">
+    <div class="row">
+        {% if searched %}
+        <h1>Results for {{ message }} are {{searched | length}}</h1>
+
+        {% for category in categories %}
+
+        <img src="{{category.image.url}}" alt=""> {% endfor %} {% else %}
+        <h1>you forgto to sea rch</h1>
+        {% endif %}
+    </div>
+</div>
+</div>
+
+{% endblock content %}
