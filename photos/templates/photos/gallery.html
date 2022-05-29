@@ -3,24 +3,24 @@
 <section id="uno">
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Chino - ga</a>
+            <a id="navbar1" class="navbar-brand  " style="color: rgb(255, 255, 255);font-weight:bold" href="#">Chino - ga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+                <ul id="navbar" class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" style="font-weight: 700 ; font-family: Oswald;" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add' %}">Add photo</a>
+                        <a class="nav-link" style="font-weight: 700 ; font-family: Oswald;" href="{% url 'add' %}">Add photo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'gallery'%}">All categories</a>
+                        <a class="nav-link" style="font-weight: 700 ; font-family: Oswald;" href="{% url 'gallery'%}">All categories</a>
                     </li>
                     {% for category in categories %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'gallery' %}?category={{category.name}}">{{category.name}}</a>
+                        <a class="nav-link" style="font-weight: 700 ; font-family: Oswald;" href="{% url 'gallery' %}?category={{category.name}}">{{category.name}}</a>
                     </li>
                     {% endfor %}
                     <!-- <li class="nav-item dropdown">
@@ -39,7 +39,7 @@
                         </ul>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" style="font-weight: 700 ; font-family: Oswald;" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
                 <!-- search form -->
@@ -65,26 +65,33 @@
 
 <div class="container mt-4">
     <p class="explore text-center">EXPLORE MY WORK</p>
-    <h3 class="text-center">Selected Galaries</h3>
+    <h3 id="gala" class="text-center">Selected Galaries</h3>
+
 
     <div class="row p-1">
         {% for photo in photos %}
-        <div class="col m-1 mb-5">
+        <div class="col m-1 mb-5 justify-content-center">
             <div class="card my-2">
                 <img class="card-img img-fluid" src="{{photo.image.url}}" alt="Bologna">
                 <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                     <div class="card-body text-center">
-                        <h3>{{photo.category}}</h3>
-
-                        <a href="#" class="card-link text-warning">Read More</a>
 
 
 
 
                     </div>
-                    <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark  btn-sm">view Photo</a>
+                    <div class="card-footer mt-5 text-center">
+
+                    </div>
 
                 </div>
+
+            </div>
+            <div class="desc location">
+                <h2>photo taken at : {{photo.location.name}}</h2>
+                <p> Category : {{photo.category}}</p>
+                <h2><a class="bn btn-outline-warning " href="{% url 'photo' photo.id %}">view photo</a></h2>
+
             </div>
         </div>
         {% empty %}

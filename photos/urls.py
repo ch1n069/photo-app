@@ -8,6 +8,8 @@ urlpatterns = [
     path('photo/<str:pk>/', views.ViewPhoto, name='photo'),
     path('add/', views.addPhoto, name='add'),
     path('search/', views.search_results, name='search_results'),
+    path('update/<str:pk>/', views.updatePhoto, name='update-photo'),
+
 
 
 ]

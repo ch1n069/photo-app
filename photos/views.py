@@ -81,6 +81,12 @@ def search_results(request):
 
 
 
+def updatePhoto(request, pk):
+    photo = Photo.objects.get(id=pk)
+    
+
+    return render(request, 'photos/update.html',{"photo":photo})
+
 
 
     

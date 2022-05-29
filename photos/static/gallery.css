@@ -3,6 +3,24 @@ h1 {
     color: Red;
 }
 
+a {
+    text-decoration: none;
+}
+
+.location {
+    font-family: 'Oswald';
+    font-size: 15px;
+}
+
+.location h2 {
+    font-family: 'Oswald';
+    font-size: 15px;
+}
+
+#gala {
+    font-family: 'Oswald';
+}
+
 body {
     background-color: black;
     color: white;
