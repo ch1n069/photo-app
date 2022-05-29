@@ -20,3 +20,8 @@ def ViewPhoto(request, pk):
     ctx = {'photo':photo,}
 
     return render(request, 'photos/photo.html', ctx)
+
+
+
+def addPhoto(request):
+    return render (request , 'photos/add.html')
