@@ -30,6 +30,14 @@ class  Photo(models.Model):
     description = models.CharField(max_length=200, null=False)
 
 
+        
+    @classmethod
+    def search_by_category(cls,search_term):
+        image = cls.object.filter(category__icontains=search_term)
+
+
+        return image
+
 
 
     def __str__(self):
