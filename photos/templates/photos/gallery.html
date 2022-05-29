@@ -15,9 +15,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'add' %}">Add photo</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'gallery'%}">All categories</a>
+                    </li>
                     {% for category in categories %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{category.name}}</a>
+                        <a class="nav-link" href="{% url 'gallery' %}?category={{category.name}}">{{category.name}}</a>
                     </li>
                     {% endfor %}
                     <!-- <li class="nav-item dropdown">
