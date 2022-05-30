@@ -1,1 +1,1 @@
-web : gunicorn photolab.wsgi 
+web : gunicorn photolab.wsgi --log-file 
