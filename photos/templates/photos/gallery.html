@@ -46,7 +46,7 @@
                 <form class="d-flex" action="{% url 'search_results' %}" method="POST">
                     {% csrf_token %}
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button id="search" class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -72,7 +72,7 @@
         {% for photo in photos %}
         <div class="col m-1 mb-5 justify-content-center">
             <div class="card my-2">
-                <img class="card-img img-fluid" src="{{photo.image.url}}" alt="Bologna">
+                <a href="{% url 'photo' photo.id %}"><img class="gallery-item card-img img-fluid" src="{{photo.image.url}}" alt="Bologna"></a>
                 <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                     <div class="card-body text-center">
 
@@ -94,6 +94,8 @@
 
             </div>
         </div>
+
+
         {% empty %}
         <h3>no photo</h3>
         {% endfor %}
@@ -105,5 +107,8 @@
 
 </div>
 </div>
+
+
+
 
 {% endblock content %}
