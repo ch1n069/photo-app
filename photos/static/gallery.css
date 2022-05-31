@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Lato:ital,wght@1,900&family=Lobster&family=Oswald:wght@200;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,800;1,100&family=Raleway:wght@600&family=Roboto+Condensed&family=Rye&display=swap');
 img {
     max-width: 100%;
+    cursor: pointer;
 }
 
 #myImg {
     cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
 }
 
 #search {
