@@ -3,6 +3,10 @@ img {
     max-width: 100%;
 }
 
+#myImg {
+    cursor: pointer;
+}
+
 #search {
     background-color: black;
     border: none;

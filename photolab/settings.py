@@ -19,21 +19,58 @@ import django_heroku
 from decouple import config,Csv
 
 
+
+# MODE=config("MODE", default="dev")
+# SECRET_KEY = config('SECRET_KEY')
+# DEBUG = config('DEBUG', default=False, cast=bool)
+
+
+# if config('MODE')=="dev":
+
+        
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'photolib',
+#             'USER': 'moringa',
+#             'PASSWORD': 'newpassword',
+#             'HOST': config('DB_HOST'),
+
+#         }
+#     }
+
+#     # production
+# else :
+    
+
+
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default=config('DATABASE_URL')
+#         )
+#     }
+
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-hyxkam$j+7+&lgcdt7x-$4js)6bngcyxuv=qognti&zytd_g4_'
+SECRET_KEY = 'django-insecure-hyxkam$j+7+&lgcdt7x-$4js)6bngcyxuv=qognti&zytd_g4_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = FALSE
 
-ALLOWED_HOSTS = ['brunos-photo-app.herokuapp.com', '127.0.0.1']
+# ALLOWED_HOSTS = ['brunos-photo-app.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -58,6 +95,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'photolib',
+            'USER': 'moringa',
+            'PASSWORD': 'newpassword',
+            'HOST': config('DB_HOST'),
+
+        }
+    }
 
 ROOT_URLCONF = 'photolab.urls'
 
@@ -87,42 +136,7 @@ WSGI_APPLICATION = 'photolab.wsgi.application'
 
 
 
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
-
-
-# development
-if config('MODE')=="dev":
-
-        
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'photolib',
-            'USER': 'moringa',
-            'PASSWORD': 'newpassword',
-            'HOST': config('DB_HOST'),
-
-        }
-    }
-
-    # production
-else :
-    
-
-
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=config('DATABASE_URL')
-        )
-    }
-
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
