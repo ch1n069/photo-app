@@ -88,7 +88,7 @@
 
             </div>
             <div class="desc location">
-                <h2>photo taken at : {{photo.location.name}}</h2>
+                <h2>photo taken at : {{photo.location.location.name}}</h2>
                 <p> Category : {{photo.category}}</p>
                 <h2><a class="bn btn-outline-warning " href="{% url 'photo' photo.id %}">view photo</a></h2>
 

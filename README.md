@@ -1,5 +1,12 @@
 # Photo-Gallery
  * This is an application where the one can share their magical moments in form of pictures. 
+## screen shots
+
+![Screenshot from 2022-05-31 18-47-55](https://user-images.githubusercontent.com/82473156/171215731-720244cd-1113-4d88-b8b9-c6f6852865e4.png)
+
+
+
+
 
  ## Author
  * Bruno Gatiba  
