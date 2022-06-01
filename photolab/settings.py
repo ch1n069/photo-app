@@ -97,16 +97,16 @@ MIDDLEWARE = [
 ]
 
 
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'photolib',
-            'USER': 'moringa',
-            'PASSWORD': 'newpassword',
-            'HOST': config('DB_HOST'),
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'photolib',
+#             'USER': 'moringa',
+#             'PASSWORD': 'newpassword',
+#             'HOST': config('DB_HOST'),
 
-        }
-    }
+#         }
+#     }
 
 ROOT_URLCONF = 'photolab.urls'
 
