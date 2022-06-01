@@ -136,7 +136,7 @@ WSGI_APPLICATION = 'photolab.wsgi.application'
 
 
 
-ALLOWED_HOSTS = ['*'] 
+# ALLOWED_HOSTS = ['*'] 
 
 
 # Password validation
