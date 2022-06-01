@@ -13,7 +13,8 @@ import sys
 from django.core.wsgi import get_wsgi_application
 
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'photolab.settings'
+# os.environ['DJANGO_SETTINGS_MODULE'] = 'photolab.settings'
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','photolab.settings')
 
 application = get_wsgi_application()
 
