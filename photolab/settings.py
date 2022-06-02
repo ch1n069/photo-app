@@ -15,6 +15,10 @@ from pickle import FALSE
 import os
 import dj_database_url
 
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import django_heroku
 from decouple import config,Csv
 
@@ -54,6 +58,8 @@ else :
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,13 +82,15 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
+    'photos.apps.PhotosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'photos.apps.PhotosConfig'
+    'cloudinary',
+
 ]
 
 MIDDLEWARE = [
@@ -97,16 +105,16 @@ MIDDLEWARE = [
 ]
 
 
-# DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': 'photolib',
-#             'USER': 'moringa',
-#             'PASSWORD': 'newpassword',
-#             'HOST': config('DB_HOST'),
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'photolib',
+            'USER': 'moringa',
+            'PASSWORD': 'newpassword',
+            'HOST': config('DB_HOST'),
 
-#         }
-#     }
+        }
+    }
 
 ROOT_URLCONF = 'photolab.urls'
 
@@ -170,6 +178,11 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -192,7 +205,14 @@ STATICFILES_DIRS = [
 
 
 
+# cloudinary
 
+
+cloudinary.config( 
+  cloud_name = 'dmob1y4c8', 
+  api_key = '192667882691452', 
+  api_secret = 'pxAI24pEj0luL1e5DRpEHQ-2b5k' 
+)
 
 
 
