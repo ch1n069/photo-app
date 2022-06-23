@@ -38,6 +38,9 @@ class  Photo(models.Model):
 
         return image
 
+    def save_photo(self):
+        self.save
+
 
 
     def __str__(self):

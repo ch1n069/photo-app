@@ -70,8 +70,17 @@
 
     <div class="row p-1">
         {% for photo in photos %}
+
+
+
+
         <div class="col m-1 mb-5 justify-content-center">
-            <div class="card my-2">
+
+
+
+
+
+            <div class="card my-2 ">
                 <img id="myImg" class="gallery-item card-img img-fluid" src="{{photo.image.url}}" alt="Bologna">
                 <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                     <div class="card-body text-center">
@@ -93,11 +102,16 @@
                 <h2><a class="bn btn-outline-warning " href="{% url 'photo' photo.id %}">view photo</a></h2>
 
             </div>
+
         </div>
 
 
+
+
+
+
         {% empty %}
-        <h3>no photo</h3>
+        <h3>no photos</h3>
         {% endfor %}
 
     </div>
@@ -109,6 +123,11 @@
 </div>
 
 
+<script>
+    document.getElementById(button).onclick = alert() {
+        alert('hello there')
+    }
+</script>
 
 
 {% endblock content %}
